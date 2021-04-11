@@ -36,7 +36,7 @@ export const Map = ({ navigation }) => {
     const fetchInitialData = (location) => {
         const latitude = location.latitude; // you can update it with user's latitude & Longitude
         const longitude = location.longitude;
-        const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + latitude + ',' + longitude + '&radius=' + 10000 + '&keyword=cvs+walgreens' +  '&key=' + 'AIzaSyCXTt1AETdySLl6k1XGrBmsW2aQbp8vX1s'
+        const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + latitude + ',' + longitude + '&radius=' + 10000 + '&keyword=cvs+walgreens' +  '&key=' + 'MYKEY'
         fetch(url)
             .then(res => {
             return res.json()
@@ -73,7 +73,7 @@ export const Map = ({ navigation }) => {
     }
 
     const fetchSpecificDetails = (pharmacy) => {
-        const url = 'https://maps.googleapis.com/maps/api/place/details/json?place_id=' + pharmacy.placeId + '&fields=formatted_address,formatted_phone_number&key=AIzaSyCXTt1AETdySLl6k1XGrBmsW2aQbp8vX1s'
+        const url = 'https://maps.googleapis.com/maps/api/place/details/json?place_id=' + pharmacy.placeId + '&fields=formatted_address,formatted_phone_number&key=MYKEY'
         fetch(url).then(res => {
             return res.json()
         }).then(res => {
