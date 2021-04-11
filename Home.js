@@ -14,6 +14,7 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated from 'react-native-reanimated';
 import { bounce } from 'react-native/Libraries/Animated/Easing';
+import { apikeys } from './api-keys';
 
 export const Home = ({ navigation }) => {
     const chartConfig = {
@@ -39,7 +40,7 @@ export const Home = ({ navigation }) => {
         fetch("https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&media=True", {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "58143f60a0msh9b238a4cf58ba29p1e28e0jsn9e523b0104ba",
+                "x-rapidapi-key": apikeys.newsApi,
                 "x-rapidapi-host": "covid-19-news.p.rapidapi.com"
             }
         })
